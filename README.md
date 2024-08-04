@@ -1,75 +1,17 @@
-# Nuxt 3 Minimal Starter
+# Unit Test - Vitest
+## Overall
+**....這邊會放畫面....**
+**專案簡介**
+這個專案是在NUXT3專案練習Vitest；主要測function，不會測component。
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**使用技術**
+* **前端框架**：`VUE3`, `NUXT3`
+* **Other**：`TypeScript`, `Pinia`, `VueRouter`
+* **Unit test**：`Vitest`
+* **API**: `OFetch`
+* **CICD**: git action $\rightarrow$ git page
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Test
+**Formatter**
+* TicketModel $\rightarrow$ TicketGeneratedModel
+* PartyColorModel $\rightarrow$ colorTicketModel
