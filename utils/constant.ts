@@ -1,0 +1,2 @@
+export const TICKET_URL = 'https://db.cec.gov.tw/static/elections/data/tickets/ELC/P0/00/4d83db17c1707e3defae5dc4d4e9c800/C/00_000_00_000_0000.json';
+export const PARTY_COLOR = 'https://db.cec.gov.tw/static/webs/configs/party_colors.json';

@@ -1,6 +1,6 @@
 import { FetchError } from "ofetch";
 
-export default function useApi() {
+export default function useAPI() {
   const fetchData: Ref<any> = ref();
   const isLoading: Ref<boolean> = ref(false);
   const errorLog: Ref<string> = ref('');
