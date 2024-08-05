@@ -7,6 +7,9 @@ export const ticketFormatter = (modelArr: TicketModel[]) => {
         getPartyColorModel,
         generateModel,
     } = useTicket();
+
+    const colorStore = usePartyColor();
+    const { colorList } = storeToRefs(colorStore);
     
     // get all keys
     const KEY = "cand_no";
@@ -25,7 +28,7 @@ export const ticketFormatter = (modelArr: TicketModel[]) => {
     // 3. push TicketGeneratedModel to _result: []
     const generatedTicketGeneratedModel = groupedModelArr.map( (_arr) => {
         // get the Party Color Model
-        const _cModel = getPartyColorModel(_arr);
+        const _cModel = getPartyColorModel(_arr, colorList.value);
         return generateModel(_arr, _cModel);
     });
     return generatedTicketGeneratedModel;

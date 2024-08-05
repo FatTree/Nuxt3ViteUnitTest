@@ -16,6 +16,7 @@ export const useTicketStore = defineStore('ticket', () => {
             const _list = fetchData.value['00_000_00_000_0000'];
             _result = _list.filter( (e: TicketModel) => (e.prv_code === '63'));
             ticketList.value = ticketFormatter(_result)
+            console.log(ticketList.value);
         }
         return _result;
     }

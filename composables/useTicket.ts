@@ -2,9 +2,6 @@ import type { TicketModel, PartyColorModel } from "~/models/apiModel";
 import type { TicketViewModel } from "~/models/viewModel";
 import { usePartyColor } from "~/stores/usePartyColor";
 export default function useTicket() {
-    const colorStore = usePartyColor();
-    const { colorList } = storeToRefs(colorStore);
-    const { getColorList } = colorStore;
     /**
      * Generate a list of the cand model with the same cand_no: 
      * [{}, ...] => [{..., cand_no: 1, isVice: " "}}, {..., cand_no: 1, isVice: "Y"}]
@@ -19,22 +16,23 @@ export default function useTicket() {
                 acc.push(crr);
             }
             return acc;
-        }, [])
+        }, []);
         return modelArr;
     }
 
     /**
      * Get the Party Color Model of the candidate
      * @param _mArr TicketModel[] generated from "getSameKeyModel"
+     * @param _colorArr PartyColorModel[] get from color API
      * @returns PartyColorModel
      */
-    const getPartyColorModel = (_mArr: TicketModel[]): PartyColorModel => {
+    const getPartyColorModel = (_mArr: TicketModel[], _colorArr: PartyColorModel[]): PartyColorModel => {
         const _ticket = _mArr[0]
         const _partyName = _ticket.party_name.toString();
         const _partyCode = _ticket.party_code.toString();
         
         // get the colorModel belonging to the party
-        let colorModel = colorList.value.find( (_c: PartyColorModel) => ( _partyCode === _c.party_code));
+        let colorModel = _colorArr.find( (_c: PartyColorModel) => ( _partyCode === _c.party_code));
         
         // in undefined case
         if (colorModel === undefined) {
