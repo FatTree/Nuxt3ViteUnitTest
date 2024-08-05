@@ -1,15 +1,15 @@
 import useTicket from "~/composables/useTicket";
-import type { TicketModel } from "~/models/apiModel";
+import type { PartyColorModel, TicketModel } from "~/models/apiModel";
 
-export const ticketFormatter = (modelArr: TicketModel[]) => {
+export const ticketFormatter = (modelArr: TicketModel[], colorList: PartyColorModel[] ) => {
     const {
         getSameKeyModel,
         getPartyColorModel,
         generateModel,
     } = useTicket();
 
-    const colorStore = usePartyColor();
-    const { colorList } = storeToRefs(colorStore);
+    // const colorStore = usePartyColor();
+    // const { colorList } = storeToRefs(colorStore);
     
     // get all keys
     const KEY = "cand_no";
@@ -28,7 +28,7 @@ export const ticketFormatter = (modelArr: TicketModel[]) => {
     // 3. push TicketGeneratedModel to _result: []
     const generatedTicketGeneratedModel = groupedModelArr.map( (_arr) => {
         // get the Party Color Model
-        const _cModel = getPartyColorModel(_arr, colorList.value);
+        const _cModel = getPartyColorModel(_arr, colorList);
         return generateModel(_arr, _cModel);
     });
     return generatedTicketGeneratedModel;
