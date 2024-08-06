@@ -19,18 +19,14 @@ const gggggg = () => {
 
 <template>
   <div>
-    Page: Formatter
-    <p>Layout: default</p>
     <button @click="gggggg">getData</button>
-    <p>isLoad: {{ ticketListIsLoading }}</p>
-    <p class="log">fetchData:</p>
+    <p>isLoading: {{ ticketListIsLoading }}</p>
+    <p v-if="ticketList.length">地區：{{ ticketList[0].area_name }}</p>
     <div class="top" v-for="(item, k) in ticketList" :key="k">
-      <p>area_name: {{ item.area_name }}</p>
-      <p>cand_id: {{ item.cand_id }}</p>
-      <p>cand_name: {{ item.cand_name }}</p>
-      <p>vice_name: {{ item.vice_name }}</p>
-      <p>party_code: {{ item.party_code }}</p>
-      <p>party_name: {{ item.party_name }}</p>
+      <p>{{ item.cand_no }}. {{ item.party_name }} <label v-if="item.is_victor.trim()==='*'">當選</label></p>
+      <p>{{ item.cand_name }} | {{ item.vice_name }}</p>
+      <p>{{ item.ticket_num.toLocaleString('en') }} 票 ({{ item.ticket_percent }} %)</p>
+      <p></p>
     </div>
   </div>
 </template>

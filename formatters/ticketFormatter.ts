@@ -8,9 +8,6 @@ export const ticketFormatter = (modelArr: TicketModel[], colorList: PartyColorMo
         generateModel,
     } = useTicket();
 
-    // const colorStore = usePartyColor();
-    // const { colorList } = storeToRefs(colorStore);
-    
     // get all keys
     const KEY = "cand_no";
     const allNos: string[] = modelArr.map( (_m) => (_m[KEY].toString()));

@@ -9,7 +9,7 @@ onBeforeMount( async() => {
 
 <template>
   <div>
-    Layout: default
+    <h1>Nuxt3ViteUnitTest</h1>
     <slot />
   </div>
 </template>
