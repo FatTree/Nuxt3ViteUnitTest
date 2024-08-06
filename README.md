@@ -1,7 +1,6 @@
 # Unit Test - Vitest
 ## Overall
-![測試畫面](https://github.com/FatTree/Nuxt3ViteUnitTest/blob/dev/public/forReadMe2.png)
-![專案畫面](https://github.com/FatTree/Nuxt3ViteUnitTest/blob/dev/public/forReadMe.png)
+![測試畫面](https://github.com/FatTree/Nuxt3ViteUnitTest/blob/dev/public/forReadMe3.png)
 
 **專案簡介**
 * 在NUXT3專案練習Vitest；主要測function，不會測component。
